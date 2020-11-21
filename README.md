@@ -22,14 +22,14 @@ The last piece of the puzzle is attaching the whole thing to the C64 motherboard
 - Pin 3, the green wire, goes to VCC (J1 pin 2)
 - Pin 4, the yellow wire, goes to IRQ (J1 pin 3)
 
-Before powering up, doublecheck that GND and VCC is in the correct spot, swapping them around will kill the IC on the IRQ LED board. Enjoy your freqeuently green power LED!
+Before powering up, double-check that GND and VCC is in the correct spot, swapping them around will kill the IC on the IRQ LED board. Enjoy your freqeuently green power LED!
 
 # BOM
 Most parts should be easy to get a hold of from your favourite local electronic component shop, but since I don't have access to the more serious ones I'm mostly getting my components from ebay/AliExpress (free shipping most places, but plan on waiting 3-4 weeks though).
 
 | Reference    | Item                                  | Count |
 | ------------ | ------------------------------------- | ----- |
-| PCB          | Fabricate using Gerber files ([order](https://www.pcbway.com/project/shareproject/Commodore_64_IRQ_LED.html)  |     1 |
+| PCB          | Fabricate using Gerber files ([order](https://www.pcbway.com/project/shareproject/Commodore_64_IRQ_LED.html))  |     1 |
 | D1 *         | 5mm Bi-colour LED (common cathode)    |     1 |
 | J1           | 3-pin right-angle header pins         |     1 |
 | J2 **        | Piece of wire                         |     1 |
@@ -37,4 +37,5 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | U1           | 74LS04 or 74HCT04 (DIP-14)            |     1 |
 
 *) These are 3 pin LEDs of the common cathode variety, check using diode test on a multimeter to ensure that the center pin is GND and that you know which colour goes where. Alternatively, jam a CR2032 battery between the pins. Common cathode RGB LED can be used, just cut off the blue one.
+
 **) You can wire a 3-pin SPDT wire into these pins as a means to enable/disable the mod, solder a piece of leftover wire between pins 1-2 to enable it permanently (if you do not want a switch).
