@@ -91,17 +91,6 @@ F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 5750 7025 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L irq_led:IN J1
-U 1 1 602A8992
-P 8125 2375
-F 0 "J1" H 8125 2692 50  0000 C CNN
-F 1 "Signals" H 8125 2601 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm" H 8125 2375 50  0001 C CNN
-F 3 "~" H 8125 2375 50  0001 C CNN
-	1    8125 2375
-	-1   0    0    -1  
-$EndComp
-$Comp
 L power:VCC #PWR0101
 U 1 1 602A9363
 P 8400 2200
@@ -260,22 +249,55 @@ Wire Wire Line
 	7525 2550 7525 2475
 Wire Wire Line
 	7525 2475 7925 2475
-$Comp
-L power:GND #PWR0106
-U 1 1 602DE566
-P 7525 3050
-F 0 "#PWR0106" H 7525 2800 50  0001 C CNN
-F 1 "GND" H 7530 2877 50  0000 C CNN
-F 2 "" H 7525 3050 50  0001 C CNN
-F 3 "" H 7525 3050 50  0001 C CNN
-	1    7525 3050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5825 3000 6625 3000
 Wire Wire Line
 	6350 7400 6350 7475
 Connection ~ 6350 7400
-Text Notes 7075 6825 0    50   ~ 0
+Text Notes 7000 6800 0    50   ~ 0
 Based on old schematic in dutch magazine, found image online and did this PCB in order to test it out.\nWhen using a bicolour LED with green and red colour it should flash orange when most I/O operations\nare taking place, added a switch that can be used to disable it according to discussion online.
+$Comp
+L irq_led:IN J1
+U 1 1 602A8992
+P 8125 2375
+F 0 "J1" H 8125 2692 50  0000 C CNN
+F 1 "Signals" H 8125 2601 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm" H 8125 2375 50  0001 C CNN
+F 3 "~" H 8125 2375 50  0001 C CNN
+	1    8125 2375
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0106
+U 1 1 5FB9ABFE
+P 7700 3175
+F 0 "#PWR0106" H 7700 3025 50  0001 C CNN
+F 1 "VCC" H 7717 3348 50  0000 C CNN
+F 2 "" H 7700 3175 50  0001 C CNN
+F 3 "" H 7700 3175 50  0001 C CNN
+	1    7700 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7525 3050 7525 3250
+Wire Wire Line
+	7525 3250 7700 3250
+Wire Wire Line
+	7700 3250 7700 3175
+Text Notes 7000 7125 0    50   ~ 0
+Source: https://www.nightfallcrew.com/04/03/2011/commodore-64-irq-bicolor-led/
+Wire Notes Line
+	7350 2525 7900 2525
+Wire Notes Line
+	7900 2525 7900 3325
+Wire Notes Line
+	7900 3325 7350 3325
+Wire Notes Line
+	7350 3325 7350 2525
+Text Notes 8475 2450 0    50   ~ 0
+Wire to cartridge port,\npins 1 (GND), 2 for\nVCC and 4 is ~IRQ.
+Text Notes 7050 3675 0    50   ~ 0
+If an enable switch is not wanted,\nadd piece of wire across 1-2.\nPosition 2-3 will keep LED RED at\nall times.
+Text Notes 4775 3550 0    50   ~ 0
+Common cathode RGB LED can\nbe used though combined colour\nmight not be perfect. If doing so,\nI recommend cutting off blue pin.
 $EndSCHEMATC
